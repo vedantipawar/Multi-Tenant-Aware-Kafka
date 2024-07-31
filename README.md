@@ -26,42 +26,64 @@ A Kafka producer that sends messages with tenant metadata to the shared topic.
   - Messages are serialized into JSON format before being sent to the Kafka topic.
 
 
+## Requirements
 
-*Steps to Get Started*
+- **Apache Kafka**: Required for message brokering and streaming.
 
-Step 1: Start ZooKeeper
-ZooKeeper is used by Kafka to manage distributed configurations. Start ZooKeeper using the following command
+- **Apache ZooKeeper**: Required for managing and coordinating Kafka brokers.
 
-![image](https://github.com/user-attachments/assets/f1c5c1fb-a48e-41f5-9e39-b39225fdfe5c)
+- **Java 8 or higher**: Required for running the Kafka and Java-based components.
 
-
-Step 2: Start Kafka
-![image](https://github.com/user-attachments/assets/cd75d8e4-daea-478b-a1dd-319c7237dba0)
+- **Maven**: Required for building and managing dependencies of the Java project.
 
 
+## Steps to Get Started
 
-Step 3: Create a Multi-Tenant Aware Topic
-Create a Kafka topic named shared-topic:
-![image](https://github.com/user-attachments/assets/3e447f3e-843e-43e7-bb38-6a72c4fd92dd)
+### **Step 1: Start ZooKeeper**
 
+ZooKeeper is used by Kafka to manage distributed configurations. Start ZooKeeper using the following command:
 
-Step 4: Build the Project
+![Start ZooKeeper](https://github.com/user-attachments/assets/f1c5c1fb-a48e-41f5-9e39-b39225fdfe5c)
+
+### **Step 2: Start Kafka**
+
+Start Kafka using the command:
+
+![Start Kafka](https://github.com/user-attachments/assets/cd75d8e4-daea-478b-a1dd-319c7237dba0)
+
+### **Step 3: Create a Multi-Tenant Aware Topic**
+
+Create a Kafka topic named `shared-topic`:
+
+![Create Topic](https://github.com/user-attachments/assets/3e447f3e-843e-43e7-bb38-6a72c4fd92dd)
+
+### **Step 4: Build the Project**
+
 Navigate to the project directory and run the following command to clean and package the project using Maven:
 
+```bash
 mvn clean package
-![image](https://github.com/user-attachments/assets/7cc9b688-a72b-42aa-8eab-f284b694c26f)
+```
+![image](https://github.com/user-attachments/assets/32e39c32-9825-4716-8870-ac0bfe6f2982)
 
-![image](https://github.com/user-attachments/assets/2f57ee48-0906-4b02-bf42-bbe8b76f88c2)
 
 
-Step 5: Start the Consumers
+### **Step 5:  Run the Producer**
+
+Run the TenantAwareProducer to send messages to the shared-topic:
+
+![image](https://github.com/user-attachments/assets/1e77638e-c7da-4c9e-a3b6-229c101226d0)
+
+![image](https://github.com/user-attachments/assets/efb53a04-5d2f-4654-9d8a-4ae6ab65c51f)
+
+
+
+### **Step 6: Start the Consumers**
+
 Start the Tenant1Consumer and Tenant2Consumer in separate terminal windows:
 
-![image](https://github.com/user-attachments/assets/393e0e86-a6d0-44fe-968e-9461830c17d6)
+![image](https://github.com/user-attachments/assets/763b8574-f3e7-41be-b04e-c855944c38b6)
 
-![image](https://github.com/user-attachments/assets/1f127070-ca05-4d56-91d3-c4d6df5cac1b)
+![image](https://github.com/user-attachments/assets/e0c72d09-164d-414d-ac98-b14defb68f1d)
 
 
-Step 6: Run the Producer
-Run the TenantAwareProducer to send messages to the shared-topic:
-![image](https://github.com/user-attachments/assets/b027fd27-6414-413e-add0-62e680aadf95)
