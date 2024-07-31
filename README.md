@@ -74,9 +74,6 @@ Run the TenantAwareProducer to send messages to the shared-topic:
 
 ![image](https://github.com/user-attachments/assets/1e77638e-c7da-4c9e-a3b6-229c101226d0)
 
-![image](https://github.com/user-attachments/assets/efb53a04-5d2f-4654-9d8a-4ae6ab65c51f)
-
-
 
 ### **Step 6: Start the Consumers**
 
