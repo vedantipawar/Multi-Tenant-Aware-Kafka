@@ -3,20 +3,29 @@
 
 This project demonstrates a multi-tenant architecture using Apache Kafka to handle end-to-end (E2E) testing scenarios. It showcases how a shared environment can be used with isolated tenant data processing, ensuring that messages for different tenants are processed independently.
 
-Components:
-Message Class:
+## Components
 
-A simple POJO representing messages with tenant metadata (tenant_id) and data (data).
-Tenant1Consumer and Tenant2Consumer:
+### **Message Class**
 
-Kafka consumers configured for two different tenant groups (tenant1 and tenant2).
-Each consumer subscribes to the same Kafka topic (shared-topic) and processes messages specific to their tenant.
-Example: Tenant1Consumer processes messages where tenant_id is tenant1, while Tenant2Consumer processes messages where tenant_id is tenant2.
-TenantAwareProducer:
+A simple POJO representing messages with tenant metadata (`tenant_id`) and data (`data`). 
+
+
+### **Tenant1Consumer and Tenant2Consumer**
+
+Kafka consumers configured for two different tenant groups (`tenant1` and `tenant2`). Each consumer subscribes to the same Kafka topic (`shared-topic`) and processes messages specific to their tenant.
+
+- **Tenant1Consumer**: 
+  - Processes messages where `tenant_id` is `tenant1`.
+
+- **Tenant2Consumer**:
+  - Processes messages where `tenant_id` is `tenant2`.
+
+### **TenantAwareProducer**
 
 A Kafka producer that sends messages with tenant metadata to the shared topic.
-Demonstrates how to create and send tenant-specific messages to Kafka.
-Messages are serialized into JSON format before being sent to the Kafka topic.
+  - Messages are serialized into JSON format before being sent to the Kafka topic.
+
+
 
 *Steps to Get Started*
 
