@@ -1,4 +1,6 @@
-##Project Description
+
+**Project Description**
+
 This project demonstrates a multi-tenant architecture using Apache Kafka to handle end-to-end (E2E) testing scenarios. It showcases how a shared environment can be used with isolated tenant data processing, ensuring that messages for different tenants are processed independently.
 
 Components:
@@ -16,7 +18,7 @@ A Kafka producer that sends messages with tenant metadata to the shared topic.
 Demonstrates how to create and send tenant-specific messages to Kafka.
 Messages are serialized into JSON format before being sent to the Kafka topic.
 
-#Steps to Get Started
+*Steps to Get Started*
 
 Step 1: Start ZooKeeper
 ZooKeeper is used by Kafka to manage distributed configurations. Start ZooKeeper using the following command
