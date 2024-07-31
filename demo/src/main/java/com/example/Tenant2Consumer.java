@@ -13,7 +13,7 @@ import java.util.Properties;
 
 public class Tenant2Consumer {
     public static void main(String[] args) {
-        // Set up Kafka consumer configuration
+        // Setting up Kafka consumer configuration
         Properties props = new Properties();
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         props.put(ConsumerConfig.GROUP_ID_CONFIG, "tenant2-consumer-group");
@@ -21,7 +21,7 @@ public class Tenant2Consumer {
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
 
-        // Use try-with-resources to ensure the consumer is closed properly
+
         try (KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props)) {
             consumer.subscribe(Collections.singletonList("shared-topic"));
 

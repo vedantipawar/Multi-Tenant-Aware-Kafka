@@ -10,7 +10,7 @@ import java.util.Properties;
 
 public class TenantAwareProducer {
     public static void main(String[] args) {
-        // Set up Kafka producer configuration
+        // Setting up Kafka producer configuration
         Properties props = new Properties();
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
@@ -19,7 +19,7 @@ public class TenantAwareProducer {
         KafkaProducer<String, String> producer = new KafkaProducer<>(props);
         ObjectMapper objectMapper = new ObjectMapper();
 
-        // Create and send messages with tenant metadata
+        // Creating and sending messages with tenant metadata
         try {
             String[] tenants = {"tenant1", "tenant2"};
             String[] messages = {"production event 1", "test event 1", "production event 2", "test event 2"};

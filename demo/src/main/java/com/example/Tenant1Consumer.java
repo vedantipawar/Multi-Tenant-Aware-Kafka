@@ -13,7 +13,7 @@ import java.util.Properties;
 
 public class Tenant1Consumer {
     public static void main(String[] args) {
-        // Set up Kafka consumer configuration
+        // Setting up up Kafka consumer configuration
         Properties props = new Properties();
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         props.put(ConsumerConfig.GROUP_ID_CONFIG, "tenant1-consumer-group");
@@ -21,11 +21,11 @@ public class Tenant1Consumer {
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
 
-        // Create and configure the consumer
+        // Creating and configuriguring the consumer
         KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);
         consumer.subscribe(Collections.singletonList("shared-topic"));
 
-        // Register a shutdown hook to ensure the consumer is closed gracefully
+        // Registering a shutdown hook to ensure the consumer is closed gracefully
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             System.out.println("Shutdown detected, closing consumer...");
             consumer.close();
@@ -35,7 +35,7 @@ public class Tenant1Consumer {
 
         try {
             while (true) {
-                // Use Duration instead of long for the timeout
+
                 ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
                 for (ConsumerRecord<String, String> record : records) {
                     try {
