@@ -1,4 +1,5 @@
 package com.example;
+
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -33,15 +34,5 @@ public class TenantAwareProducer {
         } finally {
             producer.close();
         }
-    }
-}
-
-class Message {
-    public String tenant_id;
-    public String data;
-
-    public Message(String tenant_id, String data) {
-        this.tenant_id = tenant_id;
-        this.data = data;
     }
 }

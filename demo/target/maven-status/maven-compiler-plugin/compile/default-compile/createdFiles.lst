@@ -1,3 +1,5 @@
+com\example\Message.class
+com\example\Tenant2Consumer.class
 com\example\Main.class
-TenantAwareProducer.class
-Message.class
+com\example\TenantAwareProducer.class
+com\example\Tenant1Consumer.class
